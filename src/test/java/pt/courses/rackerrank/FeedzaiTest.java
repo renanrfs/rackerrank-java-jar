@@ -15,50 +15,50 @@ public class FeedzaiTest extends Feedzai {
     private String[] b;
 
     @Test
-    public void nullValueTest() {
+    public void testNullValue() {
 	Assert.assertEquals(false, someContents(a, b));
     }
 
     @Test
-    public void sameContentTest() {
+    public void testSameContent() {
 	a = new String[] { "a", "b", "c" };
 	b = new String[] { "a", "b", "c" };
 	Assert.assertEquals(true, someContents(a, b));
     }
 
     @Test
-    public void sameContentDiferentOrderTest() {
+    public void testSameContentDiferentOrder() {
 	a = new String[] { "a", "b", "c" };
 	b = new String[] { "c", "b", "a" };
 	Assert.assertEquals(true, someContents(a, b));
     }
 
     @Test
-    public void sameContentDiferentLengthTest() {
+    public void testSameContentDiferentLength() {
 	a = new String[] { "a", "b", "c", "b" };
 	b = new String[] { "c", "b", "a" };
 	Assert.assertEquals(false, someContents(a, b));
     }
 
     @Test
-    public void diferentContentTest() {
+    public void testDiferentContent() {
 	a = new String[] { "a", "b", "k" };
 	b = new String[] { "a", "b", "c" };
 	Assert.assertEquals(false, someContents(a, b));
     }
 
     @Test
-    public void nullFriendlyWordsTest() {
+    public void testNullFriendlyWords() {
 	Assert.assertArrayEquals(null, friendlyWords(null));
     }
 
     @Test
-    public void emptyFriendlyWordsTest() {
+    public void testEmptyFriendlyWords() {
 	Assert.assertArrayEquals(new String[0], friendlyWords(new String[0]));
     }
 
     @Test
-    public void friendlyWordsTest() {
+    public void testFriendlyWords() {
 	String[] inputArray = { "silent", "deal", "teaching", "car",
 		"cheating", "dale", "lead", "listen" };
 	String[] outputArray = { "cheating teaching", "dale deal lead",
